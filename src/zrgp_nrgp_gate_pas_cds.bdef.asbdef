@@ -1,0 +1,68 @@
+managed implementation in class zbp_rgp_nrgp_gate_pas_cds unique;
+strict ( 2 );
+
+define behavior for ZRGP_NRGP_GATE_PAS_CDS //alias <alias_name>
+persistent table zrgp_nrgp_gatepa
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  //  field ( readonly ) Gateno;
+  mapping for zrgp_nrgp_gatepa
+    {
+      Addressline1     = addressline1;
+      Addressline2     = addressline2;
+      Approvedby       = approvedby;
+      Chalandate       = chalandate;
+      Challantime      = challantime;
+      Contactno        = contactno;
+      Contactperson    = contactperson;
+      Department       = department;
+      Duedate          = duedate;
+      Gateno           = gateno;
+      Headertext       = headertext;
+      Issueby          = issueby;
+      Mobilenonumer    = mobilenonumer;
+      Partyname        = partyname;
+      Plant            = plant;
+      fiscalyear = fiscalyear;
+      Trancomapnyname  = trancomapnyname;
+      Transmobileno    = transmobileno;
+      Username         = username;
+      Valueabue10k     = valueabue10k;
+      Valuebelow10k    = valuebelow10k;
+      Vehicleno        = vehicleno;
+      Vehicletype      = vehicletype;
+      L1approval       = l1approval;
+      L1approvalremark = l1approvalremark;
+      L2approval       = l2approval;
+      L2approvalremark = l2approvalremark;
+      L3approval       = l3approval;
+      L3approvalremark = l3approvalremark;
+      L4approval       = l4approval;
+      L4approvalremark = l4approvalremark;
+      Lastreceiveddate = lastreceiveddate;
+      Lastreceivedtime = lastreceivedtime;
+      Gatetype         = gatetype;
+      Remark           = remark;
+      gatepassdate     = gatepassdate;
+      tentativereturndate = tentativereturndate;
+      vendor           = vendor;
+      pono             = pono;
+      reservation      = reservation;
+      ewaybillno       = ewaybillno;
+      returnable       = returnable;
+      ewaybilldate     = ewaybilldate;
+      purpose          = purpose;
+      refgateno        = refgateno;
+      gatepass         = gatepass;
+      outnumber    = outnumber;
+      gateoutremark = gateoutremark;
+      Createdby          = createdby;
+      Createddate = createddate;
+      Createdtime = createdtime;
+    }
+}

@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForDepartmentG_S'
+define service ZUI_TABLEFORDEPARTMENTG {
+  expose ZI_TABLEFORDEPARTMENTG_S as TableForDepartmeAll;
+  expose ZI_TABLEFORDEPARTMENTG as TableForDepartmentG;
+}

@@ -1,0 +1,82 @@
+managed with additional save implementation in class ZBP_I_TABLEFORDEPARTMENTG_S unique;
+strict;
+with draft;
+define behavior for ZI_TableForDepartmentG_S alias TableForDepartmeAll
+draft table ZDEPARTMENT_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare ;
+//  {
+//    validation TableForDepartmentG ~ ValidateDataConsistency;
+//  }
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForDepartmentG { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+
+}
+
+define behavior for ZI_TableForDepartmentG alias TableForDepartmentG ##UNMAPPED_FIELD
+persistent table ZDEPARTMENT_TAB
+draft table ZDEPARTMENT_T_D
+lock dependent by _TableForDepartmeAll
+authorization dependent by _TableForDepartmeAll
+{
+  field ( mandatory : create )
+   Plant,
+   Department;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Plant,
+   Department;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+//  factory action ( features : instance ) Copy parameter ZD_CopyTableForDepartmentGP [1];
+
+  mapping for ZDEPARTMENT_TAB
+  {
+    Plant = PLANT;
+    Department = DEPARTMENT;
+  }
+
+  association _TableForDepartmeAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+//  validation ValidateDataConsistency on save { create; update; }
+
+}

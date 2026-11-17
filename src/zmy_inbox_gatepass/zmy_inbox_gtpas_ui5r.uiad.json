@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "My Inbox Gate Pass"
+  },
+  "ui5AppDetails": {
+    "appId": "zmyinboxgatepass"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_AE86633CA259E6B8F92EB22FBE31C58E0E6B764E_TM",
+    "semanticObject": "ZMY_INBOX_GATEPASS",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_AE86633CA259E6B8F92EB22FBE31C58E0E6B764E_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "My Inbox Gate Pass",
+        "subtitle": "ZMM"
+      }
+    }
+  ]
+}

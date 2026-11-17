@@ -1,0 +1,19 @@
+@EndUserText.label: 'Service Definition for RGP NRGP Gate Pass'
+define service ZMM_RGP_NRGP_GATE_PASS_def {
+  expose I_Plant                  as Plantf4;
+  expose ZRGP_CDS                 as productf4;
+  expose ZRGP_NRGP_GATE_PAS_ROT   as GATEHEAD;
+  expose zrgp_nrgp_item_CDS       as GATEITEM;
+  expose ZRGP_NRGP_GATE_PAS_PROJ;
+  expose ZRGP_NRGP_GATE_ITEM_PROJ;
+  expose ZDEPARTMENT_TAB_CDS      as ZDEPARTMENTF4;
+  expose ZDC_PRINT_USER_CDS       as ZDCPRINTUSER;
+  expose I_UnitOfMeasure          as UOM;
+  expose I_Supplier               as Supplierf4;
+  expose I_PurchasingGroup        as PurchaseGroup;
+  expose ZRGP_MATERIAL_F4         as RGPMaterialF4;
+  expose ZNRGP_MATERIAL_F4        as NRGPMaterialF4;
+  expose ZRGP_QTY_CDS;
+  expose ZRGP_RESERVATION_F4;
+  expose ZRGP_RES_PRODUCT_DATA;
+}

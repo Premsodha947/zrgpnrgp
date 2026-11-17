@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForUserApprova_S'
+define service ZUI_TABLEFORUSERAPPROVA {
+  expose ZI_TABLEFORUSERAPPROVA_S as TableForUserApprAll;
+  expose ZI_TABLEFORUSERAPPROVA as TableForUserApprova;
+}

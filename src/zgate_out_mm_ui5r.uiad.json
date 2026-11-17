@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Gate Out - MM",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Gate Out"
+  },
+  "ui5AppDetails": {
+    "appId": "zgateout.zgateoutmm"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4592FAACAE8A0768E736F7D2C2E44F9652A31E9E_TM",
+    "semanticObject": "zgate_out_mm",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4592FAACAE8A0768E736F7D2C2E44F9652A31E9E_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Gate Out",
+        "subtitle": "MM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+managed implementation in class zbp_rgp_nrgp_gate_item_cds unique;
+strict ( 2 );
+
+define behavior for ZRGP_NRGP_GATE_ITEM_CDS //alias <alias_name>
+persistent table zrgp_nrgp_item
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+  create ;
+  update;
+  delete;
+//  field ( readonly ) Gateno, Srno, Material;
+  mapping for zrgp_nrgp_item
+    {
+    Gateno = gateno;
+    fiscalyear = fiscalyear;
+    Issueqty = issueqty;
+    Material = material;
+    Materialdec = materialdec;
+    Returnable = returnable;
+    Returnqty = returnqty;
+    Srno = srno;
+    Uom = uom;
+    Perunitvalue = perunitvalue;
+    Value = value;
+    returndate = returndate;
+      gatepass  = gatepass;
+      refgateno = refgateno;
+      refgateit = refgateit;
+      completed = completed;
+    }
+}

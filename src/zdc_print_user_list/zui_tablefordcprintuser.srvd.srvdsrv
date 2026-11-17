@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TableForDcPrintUser_S'
+define service ZUI_TABLEFORDCPRINTUSER {
+  expose ZI_TableForDcPrintUser_S as TableForDcPrintUAll;
+  expose ZI_TableForDcPrintUser   as TableForDcPrintUser;
+}

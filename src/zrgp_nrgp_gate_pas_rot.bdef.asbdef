@@ -1,0 +1,102 @@
+managed implementation in class zbp_rgp_nrgp_gate_pas_rot unique;
+strict ( 2 );
+
+define behavior for ZRGP_NRGP_GATE_PAS_ROT //alias <alias_name>
+persistent table zrgp_nrgp_gatepa
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+//  field ( readonly ) Gateno;
+  association _gateitem { create; }
+  mapping for zrgp_nrgp_gatepa
+  {
+    Addressline1 = addressline1;
+    Addressline2 = addressline2;
+    fiscalyear = fiscalyear;
+    Approvedby = approvedby;
+    Chalandate = chalandate;
+    Challantime = challantime;
+    Contactno = contactno;
+    Contactperson = contactperson;
+    Department = department;
+    Duedate = duedate;
+    Gateno = gateno;
+    Headertext = headertext;
+    Issueby = issueby;
+    Mobilenonumer = mobilenonumer;
+    Partyname = partyname;
+    Plant = plant;
+    Trancomapnyname = trancomapnyname;
+    Transmobileno = transmobileno;
+    Username = username;
+    Valueabue10k = valueabue10k;
+    Valuebelow10k = valuebelow10k;
+    Vehicleno = vehicleno;
+    tentativereturndate =tentativereturndate;
+    Vehicletype = vehicletype;
+    L1approval = l1approval;
+ L1approvalremark = l1approvalremark;
+ L2approval = l2approval;
+ L2approvalremark = l2approvalremark;
+ L3approval = l3approval;
+ L3approvalremark = l3approvalremark;
+ L4approval = l4approval;
+ L4approvalremark = l4approvalremark;
+ Lastreceiveddate = lastreceiveddate;
+ Lastreceivedtime = lastreceivedtime;
+ Gatetype = gatetype;
+ Remark = remark;
+      gatepassdate     = gatepassdate;
+      vendor           = vendor;
+      pono             = pono;
+      reservation      = reservation;
+      ewaybillno       = ewaybillno;
+      returnable       = returnable;
+      ewaybilldate     = ewaybilldate;
+      purpose = purpose;
+      gatepass = gatepass;
+      refgateno = refgateno;
+      outnumber = outnumber;
+      gateoutremark = gateoutremark;
+      Createdby = createdby;
+      Createddate = createddate;
+      Createdtime = createdtime;
+  }
+}
+
+define behavior for zrgp_nrgp_item_CDS //alias <alias_name>
+persistent table zrgp_nrgp_item
+lock dependent by _gatehead
+authorization dependent by _gatehead
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Gateno,fiscalyear;
+  association _gatehead;
+  mapping for zrgp_nrgp_item
+
+    {
+    Gateno = gateno;
+    Issueqty = issueqty;
+    fiscalyear = fiscalyear;
+    Material = material;
+    Materialdec = materialdec;
+    Returnable = returnable;
+    Returnqty = returnqty;
+    Srno = srno;
+    Uom = uom;
+    Value = value;
+    Perunitvalue = perunitvalue;
+    returndate = returndate;
+    gatepass = gatepass;
+  refgateno  =refgateno;
+  refgateit  = refgateit;
+  completed  =  completed;
+
+    }
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for RGP NRGP Gate Report'
+define service ZRGP_NRGP_REPORT_DEF {
+  expose ZRGP_NRGP_REPORT;
+}

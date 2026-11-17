@@ -1,0 +1,81 @@
+managed with additional save implementation in class ZBP_I_TABLEFORDCPRINTUSER_S unique;
+strict;
+with draft;
+define behavior for ZI_TableForDcPrintUser_S alias TableForDcPrintUAll
+draft table ZDC_PRINT_U_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare ;
+//  {
+//    validation TableForDcPrintUser ~ ValidateDataConsistency;
+//  }
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _TableForDcPrintUser { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+
+}
+
+define behavior for ZI_TableForDcPrintUser alias TableForDcPrintUser ##UNMAPPED_FIELD
+persistent table ZDC_PRINT_USER
+draft table ZDC_PRINT_USE_D
+lock dependent by _TableForDcPrintUAll
+authorization dependent by _TableForDcPrintUAll
+{
+  field ( mandatory : create )
+   Srno;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Srno;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+//  factory action ( features : instance ) Copy parameter ZD_CopyTableForDcPrintUserP [1];
+
+  mapping for ZDC_PRINT_USER
+  {
+    Srno = SRNO;
+    Userid = USERID;
+    Username = USERNAME;
+  }
+
+  association _TableForDcPrintUAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+//  validation ValidateDataConsistency on save { create; update; }
+
+}

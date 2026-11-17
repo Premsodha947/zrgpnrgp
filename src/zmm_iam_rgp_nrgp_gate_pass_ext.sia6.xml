@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZMM_IAM_RGP_NRGP_GATE_PASS_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>I am File for RGP NRGP Gate Pass</DESCRIPTION>
+     <RESPONSIBLE>CB9980000020</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>DU0</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZMM_RGP_NRGP_GATE_PASS</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZMM_IAM_RGP_NRGP_GATE_PASS_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <UI_APP_ID>ZRGP_NRGP_GP_UI5R</UI_APP_ID>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZMM_RGP_NRGP_GATE_PRINT_HTTP</REL_NAME>
+      <REL_TYPE>HTTP</REL_TYPE>
+      <APP_ID>ZMM_IAM_RGP_NRGP_GATE_PASS_EXT</APP_ID>
+      <SRVC_NAME>A9BD8C650C7D0B9DFE666ECEF3FFCE</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>Http Service For RGP NRGP Gate Pass Print</TEXT>
+      <TYPE_TEXT>HTTP Service</TYPE_TEXT>
+     </item>
+     <item>
+      <REL_NAME>ZMM_RGP_NRGP_GATE_PASS_BIN         0001</REL_NAME>
+      <REL_TYPE>IWSV</REL_TYPE>
+      <APP_ID>ZMM_IAM_RGP_NRGP_GATE_PASS_EXT</APP_ID>
+      <SRVC_NAME>171F50314582FAF5A8716258EDF461</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <UIAD_SRC>ZRGP_NRGP_GP_UI5R</UIAD_SRC>
+      <TEXT>Service Binding For RGP NRGP Gate Pass</TEXT>
+      <TYPE_TEXT>OData V2</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

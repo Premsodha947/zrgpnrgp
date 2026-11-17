@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Definition For My Inbox Gate Pass'
+define service ZMY_INBOX_GATEPASS_DEF {
+  expose ZMY_INBOX_GATEPASS_CDS  as Gatedata;
+  expose ZUSER_A_GATE_TAB_CDS    as ZUSER_APP_GATE_TAB_CDS;
+  expose ZRGP_NRGP_GATE_PAS_PROJ as ZRGP_NRGP_UPDATE;
+  expose I_Plant                 as Plantf4;
+  expose ZUSER_A_GATE_AUTH_ID;
+}
